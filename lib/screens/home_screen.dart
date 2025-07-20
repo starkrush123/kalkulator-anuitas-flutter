@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
@@ -75,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       setState(() {
         _hasilPerhitungan = hasilText;
+        SemanticsService.announce(hasilText, Directionality.of(context));
       });
     } catch (e, stacktrace) {
       showDialog(
